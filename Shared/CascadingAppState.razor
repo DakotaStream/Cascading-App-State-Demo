@@ -1,0 +1,55 @@
+﻿<CascadingValue Value="this">
+	@ChildContent
+</CascadingValue>
+
+//https://blazortrain.com/
+//https://youtu.be/k0URnQ01064
+//App.razor is wrapped with this.
+//Added toolbar.razor
+//Added toolbar to mainlayout
+
+@code {
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	private int counter = 0;
+	public int Counter
+	{
+		get
+		{
+			return counter;
+		}
+		set
+		{
+			counter = value;
+			StateHasChanged();
+		}
+	}
+	private string message = "";
+	public string Message
+	{
+		get
+		{
+			return message;
+		}
+		set
+		{
+			message = value;
+			StateHasChanged();
+		}
+	}
+
+	private bool enabled = false;
+	public bool Enabled
+	{
+		get
+		{
+			return enabled;
+		}
+		set
+		{
+			enabled = value;
+			StateHasChanged();
+		}
+	}
+}
