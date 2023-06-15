@@ -1,0 +1,12 @@
+﻿<h3>ChildComponent</h3>
+
+<button class="btn btn-primary" @onclick="UpdateMessageButtonClicked">Update Message</button>
+@code {
+	[CascadingParameter]
+	public CascadingAppState AppState {get;set;}
+	void UpdateMessageButtonClicked()
+	{
+		AppState.Message = "Message Updated by Child Component";
+	}
+
+}
